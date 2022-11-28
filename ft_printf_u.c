@@ -6,12 +6,11 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:06:57 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/28 19:17:57 by tnam             ###   ########.fr       */
+/*   Updated: 2022/11/28 20:51:07 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <stdarg.h>
+#include "ft_printf.h"
 
 static void	ft_putnbr_u_recursion(unsigned int n, int fd)
 {
@@ -26,7 +25,6 @@ static void	ft_putnbr_u_recursion(unsigned int n, int fd)
 size_t	ft_printf_u(va_list vargs_ptr)
 {
 	size_t			print_count;
-	va_list			n;
 	unsigned int	num;
 
 	num = va_arg(vargs_ptr, unsigned int);

@@ -6,14 +6,13 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 20:10:31 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/28 20:12:50 by tnam             ###   ########.fr       */
+/*   Updated: 2022/11/28 20:51:03 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <stdarg.h>
+#include "ft_printf.h"
 
-size_t	ft_printf_percent(va_list vargs_ptr)
+size_t	ft_printf_percent(void)
 {
 	write(1, "%%", 1);
 	return (1);

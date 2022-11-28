@@ -6,12 +6,11 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:34:46 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/28 19:20:02 by tnam             ###   ########.fr       */
+/*   Updated: 2022/11/28 20:51:00 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <stdarg.h>
+#include "ft_printf.h"
 
 static void	ft_itoa_hex(unsigned long long n, char *str)
 {

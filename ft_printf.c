@@ -6,20 +6,11 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:14:45 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/28 20:13:43 by tnam             ###   ########.fr       */
+/*   Updated: 2022/11/28 20:59:46 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <stdarg.h>
-
-size_t	ft_printf_c(va_list vargs_ptr);
-size_t	ft_printf_s(va_list vargs_ptr);
-size_t	ft_printf_p(va_list vargs_ptr);
-size_t	ft_printf_d_i(va_list vargs_ptr);
-size_t	ft_printf_u(va_list vargs_ptr);
-size_t	ft_printf_x(va_list vargs_ptr, char format);
-size_t	ft_printf_percent(va_list vargs_ptr);
+#include "ft_printf.h"
 
 size_t	ft_print_vargs(const char *format, va_list vargs_ptr)
 {
@@ -39,13 +30,12 @@ size_t	ft_print_vargs(const char *format, va_list vargs_ptr)
 	else if (*format == 'x' || *format == 'X')
 		print_count = ft_printf_x(vargs_ptr, *format);
 	else if (*format == '%')
-		print_count = ft_printf_percent(vargs_ptr);
+		print_count = ft_printf_percent();
 	return (print_count);
 }
 
 int	ft_printf(const char *a, ...)
 {
-	char		*result;
 	int			i;
 	size_t		print_count;
 	va_list		vargs_ptr;

@@ -6,7 +6,7 @@
 #    By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 15:14:38 by tnam              #+#    #+#              #
-#    Updated: 2022/11/28 20:26:55 by tnam             ###   ########.fr        #
+#    Updated: 2022/11/28 21:54:46 by tnam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,12 @@ AR				= ar
 ARFLAG			= crs
 
 INCLUDES		= ./
-LIBFT			= ./libft/libft.a
+LIBFT_PATH		= ./libft/libft.a
 
 SRCS_M			= ft_printf.c				\
 				  ft_printf_c.c				\
 				  ft_printf_d_i.c			\
+				  ft_printf_p.c				\
 				  ft_printf_percent.c		\
 				  ft_printf_s.c				\
 				  ft_printf_u.c				\
@@ -38,8 +39,8 @@ all: $(NAME)
 
 $(NAME): $(OBJS_M)
 	$(MAKE) all -C ./libft
-	cp libft.libft.a .
-	$(AR) $(ARFLAG) $@ $^ $(LIBFT)
+	cp $(LIBFT_PATH) $(NAME)
+	$(AR) $(ARFLAG) $@ $^
 
 %.o : %.c
 	$(CC) $(CFLAG) -c $< -o $@
@@ -49,7 +50,7 @@ clean :
 	$(RM) $(OBJS_M)
 
 fclean : clean
-	$(MAKE) -C libft cflean
+	$(MAKE) -C libft fclean
 	$(RM) $(NAME)
 
 re : fclean all

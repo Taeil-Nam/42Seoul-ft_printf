@@ -6,12 +6,11 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:15:28 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/28 18:38:11 by tnam             ###   ########.fr       */
+/*   Updated: 2022/11/28 20:50:54 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <stdarg.h>
+#include "ft_printf.h"
 
 size_t	ft_printf_c(va_list vargs_ptr)
 {

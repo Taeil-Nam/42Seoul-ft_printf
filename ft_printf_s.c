@@ -6,20 +6,29 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:25:53 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/28 20:13:48 by tnam             ###   ########.fr       */
+/*   Updated: 2022/11/28 21:25:57 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
-#include <stdarg.h>
+#include "ft_printf.h"
 
 size_t	ft_printf_s(va_list vargs_ptr)
 {
 	size_t	len;
-	va_list	str;
+	va_list	temp;
+	char	*str;
 
-	va_copy(str, vargs_ptr);
-	len = ft_strlen(va_arg(str, char *));
-	ft_putstr_fd(va_arg(vargs_ptr, char *), 1);
-	return (len);
+	va_copy(temp, vargs_ptr);
+	if (va_arg(temp, char *) == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	else
+	{
+		str = va_arg(vargs_ptr, char *);
+		len = ft_strlen(str);
+		ft_putstr_fd(str, 1);
+		return (len);
+	}
 }
