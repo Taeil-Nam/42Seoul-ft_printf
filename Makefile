@@ -6,7 +6,7 @@
 #    By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 15:14:38 by tnam              #+#    #+#              #
-#    Updated: 2022/11/28 21:54:46 by tnam             ###   ########.fr        #
+#    Updated: 2022/11/28 22:04:56 by tnam             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ NAME			= libftprintf.a
 
 CC				= cc
 CFLAG			= -Wall -Wextra -Werror
+
+COPY			= cp
 
 RM				= rm -f
 
@@ -39,7 +41,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS_M)
 	$(MAKE) all -C ./libft
-	cp $(LIBFT_PATH) $(NAME)
+	$(COPY) $(LIBFT_PATH) $(NAME)
 	$(AR) $(ARFLAG) $@ $^
 
 %.o : %.c
