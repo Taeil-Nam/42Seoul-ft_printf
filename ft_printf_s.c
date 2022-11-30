@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:25:53 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/30 13:05:34 by tnam             ###   ########.fr       */
+/*   Updated: 2022/11/30 17:59:24 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 size_t	ft_printf_s(va_list vargs_ptr)
 {
 	size_t	len;
-	va_list	temp;
 	char	*str;
 
-	va_copy(temp, vargs_ptr);
-	if (va_arg(temp, char *) == NULL)
+	str = va_arg(vargs_ptr, char *);
+	if (str == NULL)
 	{
 		write(1, "(null)", 6);
 		return (6);
 	}
 	else
 	{
-		str = va_arg(vargs_ptr, char *);
 		len = ft_strlen(str);
 		ft_putstr_fd(str, 1);
 		return (len);
