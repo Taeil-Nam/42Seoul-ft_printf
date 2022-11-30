@@ -6,17 +6,17 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:34:46 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/28 20:51:00 by tnam             ###   ########.fr       */
+/*   Updated: 2022/11/30 12:51:50 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_itoa_hex(unsigned long long n, char *str)
+static void	ft_itoa_hex(char *str, size_t n)
 {
-	int						i;
-	unsigned long long		div;
-	unsigned long long		mod;
+	int		i;
+	size_t	div;
+	size_t	mod;
 
 	i = 0;
 	while (1)
@@ -33,13 +33,13 @@ static void	ft_itoa_hex(unsigned long long n, char *str)
 
 size_t	ft_printf_p(va_list vargs_ptr)
 {
-	size_t				print_count;
-	int					i;
-	unsigned long long	address_dec;
-	char				address_str[50];
+	size_t	print_count;
+	int		i;
+	size_t	address_dec;
+	char	address_str[50];
 
-	address_dec = va_arg(vargs_ptr, unsigned long long);
-	ft_itoa_hex(address_dec, address_str);
+	address_dec = va_arg(vargs_ptr, size_t);
+	ft_itoa_hex(address_str, address_dec);
 	print_count = 2;
 	i = (int)ft_strlen(address_str) - 1;
 	write(1, "0x", 2);

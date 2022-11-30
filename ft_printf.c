@@ -6,33 +6,13 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:14:45 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/28 20:59:46 by tnam             ###   ########.fr       */
+/*   Updated: 2022/11/30 13:05:35 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_print_vargs(const char *format, va_list vargs_ptr)
-{
-	size_t	print_count;
-
-	print_count = 0;
-	if (*format == 'c')
-		print_count = ft_printf_c(vargs_ptr);
-	else if (*format == 's')
-		print_count = ft_printf_s(vargs_ptr);
-	else if (*format == 'p')
-		print_count = ft_printf_p(vargs_ptr);
-	else if (*format == 'd' || *format == 'i')
-		print_count = ft_printf_d_i(vargs_ptr);
-	else if (*format == 'u')
-		print_count = ft_printf_u(vargs_ptr);
-	else if (*format == 'x' || *format == 'X')
-		print_count = ft_printf_x(vargs_ptr, *format);
-	else if (*format == '%')
-		print_count = ft_printf_percent();
-	return (print_count);
-}
+size_t	ft_print_vargs(const char *format, va_list vargs_ptr);
 
 int	ft_printf(const char *a, ...)
 {
@@ -58,5 +38,27 @@ int	ft_printf(const char *a, ...)
 		}
 	}
 	va_end(vargs_ptr);
+	return (print_count);
+}
+
+size_t	ft_print_vargs(const char *format, va_list vargs_ptr)
+{
+	size_t	print_count;
+
+	print_count = 0;
+	if (*format == 'c')
+		print_count = ft_printf_c(vargs_ptr);
+	else if (*format == 's')
+		print_count = ft_printf_s(vargs_ptr);
+	else if (*format == 'p')
+		print_count = ft_printf_p(vargs_ptr);
+	else if (*format == 'd' || *format == 'i')
+		print_count = ft_printf_d_i(vargs_ptr);
+	else if (*format == 'u')
+		print_count = ft_printf_u(vargs_ptr);
+	else if (*format == 'x' || *format == 'X')
+		print_count = ft_printf_x(vargs_ptr, *format);
+	else if (*format == '%')
+		print_count = ft_printf_percent();
 	return (print_count);
 }

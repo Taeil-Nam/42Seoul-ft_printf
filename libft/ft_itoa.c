@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:53:34 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/15 20:59:51 by tnam             ###   ########.fr       */
+/*   Updated: 2022/11/30 11:43:25 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 	char		*result;
 
 	len = ft_getlen(n);
-	div = n;
+	div = (long long)n;
 	result = malloc((len * sizeof(char)) + 1);
 	if (result == 0)
 		return (0);
