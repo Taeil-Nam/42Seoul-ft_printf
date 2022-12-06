@@ -6,18 +6,18 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:14:45 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/30 13:05:35 by tnam             ###   ########.fr       */
+/*   Updated: 2022/12/06 15:49:16 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_print_vargs(const char *format, va_list vargs_ptr);
+int	ft_print_vargs(const char *format, va_list vargs_ptr);
 
 int	ft_printf(const char *a, ...)
 {
 	int			i;
-	size_t		print_count;
+	int			print_count;
 	va_list		vargs_ptr;
 
 	va_start(vargs_ptr, a);
@@ -41,9 +41,9 @@ int	ft_printf(const char *a, ...)
 	return (print_count);
 }
 
-size_t	ft_print_vargs(const char *format, va_list vargs_ptr)
+int	ft_print_vargs(const char *format, va_list vargs_ptr)
 {
-	size_t	print_count;
+	int	print_count;
 
 	print_count = 0;
 	if (*format == 'c')

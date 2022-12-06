@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:34:46 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/30 12:51:50 by tnam             ###   ########.fr       */
+/*   Updated: 2022/12/06 15:56:03 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ static void	ft_itoa_hex(char *str, size_t n)
 	str[i] = '\0';
 }
 
-size_t	ft_printf_p(va_list vargs_ptr)
+int	ft_printf_p(va_list vargs_ptr)
 {
-	size_t	print_count;
+	int		print_count;
 	int		i;
 	size_t	address_dec;
 	char	address_str[50];

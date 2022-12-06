@@ -6,15 +6,15 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 16:25:53 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/30 17:59:24 by tnam             ###   ########.fr       */
+/*   Updated: 2022/12/06 15:49:44 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_printf_s(va_list vargs_ptr)
+int	ft_printf_s(va_list vargs_ptr)
 {
-	size_t	len;
+	int		len;
 	char	*str;
 
 	str = va_arg(vargs_ptr, char *);

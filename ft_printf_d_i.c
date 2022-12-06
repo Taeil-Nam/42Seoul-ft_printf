@@ -6,15 +6,15 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:34:00 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/30 17:59:22 by tnam             ###   ########.fr       */
+/*   Updated: 2022/12/06 15:50:32 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_printf_d_i(va_list vargs_ptr)
+int	ft_printf_d_i(va_list vargs_ptr)
 {
-	size_t		print_count;
+	int			print_count;
 	int			num;
 	long long	num_l;
 

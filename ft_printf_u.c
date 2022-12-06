@@ -6,7 +6,7 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 19:06:57 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/28 20:51:07 by tnam             ###   ########.fr       */
+/*   Updated: 2022/12/06 15:49:36 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static void	ft_putnbr_u_recursion(unsigned int n, int fd)
 	write(fd, &c, 1);
 }
 
-size_t	ft_printf_u(va_list vargs_ptr)
+int	ft_printf_u(va_list vargs_ptr)
 {
-	size_t			print_count;
+	int				print_count;
 	unsigned int	num;
 
 	num = va_arg(vargs_ptr, unsigned int);

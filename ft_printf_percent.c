@@ -6,13 +6,13 @@
 /*   By: tnam <tnam@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 20:10:31 by tnam              #+#    #+#             */
-/*   Updated: 2022/11/28 20:51:03 by tnam             ###   ########.fr       */
+/*   Updated: 2022/12/06 15:49:47 by tnam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_printf_percent(void)
+int	ft_printf_percent(void)
 {
 	write(1, "%%", 1);
 	return (1);
