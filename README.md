@@ -7,5 +7,9 @@
 ## 관련 개념
 - 가변 인자.
 
-## 사용법
+## 개발 및 테스트 환경
+- Intel CPU 기반 Mac.
+- MacOS Version = 12.6.2
+
+## 사용 법
 - make : libft.a 라이브러리에 ft_printf 함수가 추가된, libftprintf.a 정적 라이브러리 생성.
